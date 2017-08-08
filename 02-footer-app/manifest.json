@@ -1,0 +1,7 @@
+{
+  "name": "footer-app",
+  "short_name": "footer-app",
+  "description": "Footer component",
+  "start_url": "/",
+  "display": "standalone"
+}

@@ -1,0 +1,72 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+
+
+<link rel="import" href="../../bower_components/app-layout/app-header/app-header.html">
+<link rel="import" href="../../bower_components/app-layout/app-drawer/app-drawer.html">
+<link rel="import" href="../../bower_components/app-layout/app-toolbar/app-toolbar.html">
+<link rel="import" href="../../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../../bower_components/iron-image/iron-image.html">
+<link rel="import" href="../../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../../bower_components/app-layout/app-scroll-effects/app-scroll-effects.html">
+
+
+
+
+<dom-module id="footer-app">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+
+<app-header condenses fixed style="height:100px;" >
+  <app-toolbar style="height:50px;" sticky>
+    <paper-icon-button icon="menu" on-click="openDrawer"></paper-icon-button>
+    <div main-title>My app</div>
+    <paper-icon-button icon="delete"></paper-icon-button>
+    <paper-icon-button icon="search"></paper-icon-button>
+    <paper-icon-button icon="close"></paper-icon-button>
+    <paper-icon-button icon="favorite"></paper-icon-button>
+    <paper-icon-button src="star.png"></paper-icon-button>
+    <paper-progress value="10" indeterminate bottom-item></paper-progress>
+  </app-toolbar>
+</app-header>
+<app-drawer id="drawer" swipe-open>
+  
+<paper-icon-button icon="close" on-tap="openDrawer" style="float:right; margin:3px 3px 0 0;"></paper-icon-button>
+
+</app-drawer>
+<sample-content size="10"></sample-content>
+  
+  </template>
+
+  <script>
+    /**
+     * @customElement
+     * @polymer
+     */
+    class FooterApp extends Polymer.Element {
+      static get is() { return 'footer-app'; }
+      static get properties() {
+        return {
+          prop1: {
+            type: String,
+            value: 'footer-app'
+          }
+        };
+      }
+
+                       openDrawer() {
+                               this.$.drawer.toggle();
+                             }
+
+
+
+    }
+
+
+
+    window.customElements.define(FooterApp.is, FooterApp);
+  </script>
+</dom-module>
